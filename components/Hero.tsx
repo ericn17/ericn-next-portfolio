@@ -23,20 +23,20 @@ export default function Hero({}: Props) {
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden ">
         <BackgroundCircles />
         <Image 
-          className='relative rounded-full h-32 w-32 mx-auto object-cover'
+          className='relative rounded-full h-40 w-40 mx-auto object-cover'
           src={ProfilePicture}
           alt="profile picture"  
         />
       <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
+        <h2 className='text-sm uppercase text-[#CDCDCD] pb-2 tracking-[15px]'>
           Web Developer
         </h2>
         <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
           <span>{text}</span>
-          <Cursor cursorColor='#F7AB0A' />
+          <Cursor cursorColor='#FCEE0C' />
         </h1>
 
-        <div className='pt-5'>
+        <div className='pt-7'>
           <Link href='#about'>
           <button className='heroButton'>About</button>
           </Link>

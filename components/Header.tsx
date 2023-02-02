@@ -23,17 +23,29 @@ export default function Header({}: Props) {
       }}
       className="flex flex-row items-center">
         {/* Social Icons */}
-        <SocialIcon 
+        <SocialIcon
+        className='socialIcons' 
         url="https://github.com/ericn17" 
         style={{ height: 45, width: 45 }}
+        bgColor=' #FCEE0A'
         />
         <SocialIcon 
+        className='socialIcons' 
         url="https://www.linkedin.com/feed/" 
         style={{ height: 45, width: 45 }}
+        bgColor=' #FCEE0A'
         />
-        <SocialIcon 
-        url="https://github.com/ericn17" 
+        <SocialIcon
+        className='socialIcons' 
+        url="https://facebook.com" 
         style={{ height: 45, width: 45 }}
+        bgColor=' #FCEE0A'
+        />
+        <SocialIcon
+        className='socialIcons' 
+        url="https://instagram.com" 
+        style={{ height: 45, width: 45 }}
+        bgColor=' #FCEE0A'
         />
       </motion.div>
 
@@ -55,10 +67,10 @@ export default function Header({}: Props) {
         <SocialIcon
           className="cursor-pointer"
           network="email"
-          fgColor="gray"
+          fgColor=" #FCEE0A"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">Get In Touch</p>
+        <p className="uppercase hidden md:inline-flex text-sm text-[#FCEE0A]">Get In Touch</p>
       </motion.div>
     </header>
   )
