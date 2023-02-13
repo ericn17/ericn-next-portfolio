@@ -14,6 +14,9 @@ export default function Skills({}: Props) {
       <h3 className='absolute top-24 uppercase tracking-[20px] text-[#CDCDCD] text-2xl'>
         Skills
       </h3>
+      <h3 className='absolute top-36 uppercase tracking-[3px] text-[#CDCDCD] text-sm'>
+        Hover over a badge to see skill mastery
+      </h3>
 
       <div className='grid grid-cols-4 gap-5'>
         <Skill/>
