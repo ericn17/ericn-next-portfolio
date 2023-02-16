@@ -70,7 +70,7 @@ export default function Header({}: Props) {
           fgColor=" #FCEE0A"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-[#FCEE0A]">Get In Touch</p>
+        <p className="uppercase hidden md:inline-flex text-sm text-[#FCEE0A]">Contact Me</p>
       </motion.div>
     </header>
   )

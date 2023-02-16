@@ -10,4 +10,8 @@
   .socialIcons{
     @apply ml-2
   }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-[#cdcdcd] placeholder-[#cdcdcd] transition-all focus:border-[#FCEE0A] focus:text-[#FCEE0A] hover:border-[#FCEE0A] 
+  }
 }
