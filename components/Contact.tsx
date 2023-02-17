@@ -21,28 +21,38 @@ export default function Contact({}: Props) {
           Let's get in touch.
         </h4>
 
-        <div>
+        <div className='space-y-10'>
           <div className='flex items-center space-x-5 justify-center'>
-            <PhoneIcon className='text-[#FCEE0A] h-9 w-7 animate-pulse'/>
+            <PhoneIcon className='text-[#FCEE0A] h-7 w-7 animate-pulse'/>
             <p className='text-2xl'>+7142248879</p>
           </div>
 
            <div className='flex items-center space-x-5 justify-center'>
-            <EnvelopeIcon className='text-[#FCEE0A] h-9 w-7 animate-pulse'/>
+            <EnvelopeIcon className='text-[#FCEE0A] h-7 w-7 animate-pulse'/>
             <p className='text-2xl'>15enguyen4@gmail.com</p>
+          </div>
+
+           <div className='flex items-center space-x-5 justify-center'>
+            <MapPinIcon className='text-[#FCEE0A] h-7 w-7 animate-pulse'/>
+            <p className='text-2xl'>Westminster, California</p>
           </div>
         </div>
 
         <form className='flex flex-col space-y-2 w-fit mx-auto'>
-          <div className='flex space-x-2'>
-            <input className='contactInput' type='text' placeholder='First Name'/>
-            <input className='contactInput' type='text' placeholder='Last Name'/>
+          <div className='flex space-x-2 '>
+            <input className='contactInput' type='text' placeholder='Name'/>
+            <input className='contactInput' type='text' placeholder='Email'/>
           </div>
 
           <input className='contactInput' type='text' placeholder='Subject'/>
 
-          <textarea className='contactInput'/>
-          <button className='bg-[#FCEE0A] py-5 px-10 rounded-md text-[#000000] font-bold text-lg'>Submit</button>
+          <textarea className='contactInput' placeholder='Message'/>
+          <button
+            type='submit'
+            className='bg-[#FCEE0A] py-5 px-10 rounded-md text-[#000000] font-bold text-lg'
+          >
+            Submit
+          </button>
         </form>
       </div>
     </motion.div>
