@@ -8,9 +8,6 @@ import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import Link from 'next/link'
-import { IoMdArrowDropupCircle } from 'react-icons'
-
-
 
 
 const inter = Inter({ subsets: ['latin'] })
