@@ -1,11 +1,24 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 
 type Props = {}
 
 export default function Contact({}: Props) {
+  // Possibly replace with Emailjs
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:15enguyen4@gmail.com?subject={formData.subject}&body=A message from: ${formData.name}. Message: ${formData.message}`
+  };
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -38,15 +51,18 @@ export default function Contact({}: Props) {
           </div>
         </div>
 
-        <form className='flex flex-col space-y-2 w-fit mx-auto'>
+        <form 
+          onSubmit={handleSubmit(onSubmit)} 
+          className='flex flex-col space-y-2 w-fit mx-auto'
+        >
           <div className='flex space-x-2 '>
-            <input className='contactInput' type='text' placeholder='Name'/>
-            <input className='contactInput' type='text' placeholder='Email'/>
+            <input {...register('name')} className='contactInput' type='text' placeholder='Name'/>
+            <input {...register('email')} className='contactInput' type='text' placeholder='Email'/>
           </div>
 
-          <input className='contactInput' type='text' placeholder='Subject'/>
+          <input {...register('subject')} className='contactInput' type='text' placeholder='Subject'/>
 
-          <textarea className='contactInput' placeholder='Message'/>
+          <textarea {...register('message')} className='contactInput' placeholder='Message'/>
           <button
             type='submit'
             className='bg-[#FCEE0A] py-5 px-10 rounded-md text-[#000000] font-bold text-lg'
