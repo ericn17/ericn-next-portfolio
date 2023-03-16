@@ -39,17 +39,17 @@ export interface Skill extends SanityBody {
   title: string;
 }
 
-// export interface TExperience extends SanityBody {
-//   _type: "experience";
-//   company: string;
-//   companyImage: Image;
-//   dateStarted: DataTransfer;
-//   dateEnded: Date;
-//   isCurrentlyWorkingHere: boolean;
-//   jobTitle: string;
-//   points: string[];
-//   technologies: Technology[];
-// }
+export interface Experience extends SanityBody {
+  _type: "experience";
+  company: string;
+  companyImage: Image;
+  dateStarted: DataTransfer;
+  dateEnded: Date;
+  isCurrentlyWorkingHere: boolean;
+  jobTitle: string;
+  points: string[];
+  technologies: Technology[];
+}
 
 export interface Project extends SanityBody {
   title: string;
