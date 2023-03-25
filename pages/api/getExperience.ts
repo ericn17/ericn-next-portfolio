@@ -6,9 +6,9 @@ import { Experience } from "../../typings";
 const query = groq`
   *[_type == "experience"] {
     ...,
-    experiences[]=>
+    experiences[]->
   }
-`
+`;
 
 type Data = {
   experiences: Experience[];
