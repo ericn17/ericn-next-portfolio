@@ -26,9 +26,10 @@ export default function Header({ socials }: Props) {
       transition={{
         duration:1.5,
       }}
-      className="flex flex-row items-center">
-        {/* Social Icons */}
-      {socials.map((social) => {
+      className="flex flex-row items-center"
+    >
+      {/* Social Icons */}
+      {socials.map((social) => (
         <SocialIcon
           key={social._id}
           className='socialIcons' 
@@ -36,25 +37,8 @@ export default function Header({ socials }: Props) {
           style={{ height: 45, width: 45 }}
           bgColor=' #FCEE0A'
         />
-      })}
-        <SocialIcon 
-        className='socialIcons' 
-        url="https://www.linkedin.com/feed/" 
-        style={{ height: 45, width: 45 }}
-        bgColor=' #FCEE0A'
-        />
-        <SocialIcon
-        className='socialIcons' 
-        url="https://facebook.com" 
-        style={{ height: 45, width: 45 }}
-        bgColor=' #FCEE0A'
-        />
-        <SocialIcon
-        className='socialIcons' 
-        url="https://instagram.com" 
-        style={{ height: 45, width: 45 }}
-        bgColor=' #FCEE0A'
-        />
+      ))}
+
       </motion.div>
 
       <motion.div
