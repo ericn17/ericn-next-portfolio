@@ -4,15 +4,18 @@ import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
 import ProfilePicture from 'public/profile-pic.jpg'
 import Link from 'next/link';
+import { PageInfo } from '@/typings'
 
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo;
+}
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
     const [text, count] =useTypewriter({
       words: [
-        "Hi, My Name is Eric Nguyen.",
-        "I'm a Web Developer.",
+        `Hi, My Name is ${pageInfo.name}.`,
+        `I'm a ${pageInfo.role}.`,
         "Nice to Meet You ^_^",
       ],
       loop: true,
