@@ -1,11 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PageInfo } from '@/typings'
 
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo;
+}
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -34,7 +37,7 @@ export default function About({}: Props) {
 
       <div className='space-y-10 px-0 md:px-10'>
         <h4 className='text-4xl font-semibold'>Here is a <span className='underline decoration-[#FCEE0A]/80'>little</span> background</h4>
-        <p>I graduated from Cal State Fullerton with a degree in finance but ultimately fell in love with coding and enrolled in the UCI Coding Bootcamp. There my interest for coding grew as well as my ability to problem solve. Learning to code has been a challenging but very rewarding journey. I grew up gaming and so the my portfolio's theme is Cyber Punk inspired.</p>
+        <p>{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   )
