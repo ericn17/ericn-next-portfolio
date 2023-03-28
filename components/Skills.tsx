@@ -7,7 +7,7 @@ type Props = {
   skills: SkillType[]
 }
 
-export default function Skills({ skills }: Props) {
+function Skills({ skills }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,14 +22,24 @@ export default function Skills({ skills }: Props) {
         Hover over a badge to see skill mastery
       </h3>
 
-      <div className='grid grid-cols-4 gap-5'>
-        {skills?.map((skill) => (
+      <div className='grid grid-cols-4 gap-7'>
+        {skills?.slice(0, skills.length / 2).map((skill) => (
           <Skill
             key={skill._id}
             skill={skill}
+          />
+        ))}
+
+        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill
+            key={skill._id}
+            skill={skill}
+            directionLeft
           />
         ))}
       </div>
     </motion.div>
   )
 }
+
+export default Skills;
