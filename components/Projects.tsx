@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Project } from '@/typings';
+import { urlFor } from '@/sanity';
 
-type Props = {}
+type Props = {
+  projects: Project[];
+}
 
-export default function Projects({}: Props) {
+export default function Projects({ projects }: Props) {
   const projects = [1, 2, 3, 4, 5];
   return (
     <motion.div
@@ -17,7 +21,7 @@ export default function Projects({}: Props) {
       </h3>
 
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#FCEE0A]'>
-       {projects.map((project) => (
+       {projects.map((project, i) => (
         <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
           <motion.img
             initial={{
@@ -27,17 +31,17 @@ export default function Projects({}: Props) {
             transition={{ duration: 1.2 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            src='https://preview.redd.it/trigun-stampede-character-visual-for-vash-the-stampede-v0-0bq762hcv25a1.jpg?width=640&crop=smart&auto=webp&s=a252e14f35abfd69ab7a1585f474f9f60cc5a030'
+            src={urlFor(project?.image).url()}
             alt='vash'
           />
 
           <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
             <h4 className='text-[#CDCDCD] text-4xl font-semibold text-center'>
-              CIGART.
+              {project.title}
             </h4>
 
             <p className='text-lg text-center md:text-left'>
-              CIGART. is a MERN Stack e-commerce website that uses redux, stripe for payments, JSON web tokens, and mongodb to store the users' products. You can even search and filter products in the search bar.
+              {project.summary}
             </p>
           </div>
         </div>
