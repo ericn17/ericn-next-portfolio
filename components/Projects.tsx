@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default function Projects({ projects }: Props) {
-  const projects = [1, 2, 3, 4, 5];
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,6 +33,7 @@ export default function Projects({ projects }: Props) {
             viewport={{ once: true }}
             src={urlFor(project?.image).url()}
             alt='vash'
+            width='400px'
           />
 
           <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
